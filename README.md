@@ -1,37 +1,100 @@
-## Welcome to GitHub Pages
+# Kajundrama
 
-You can use the [editor on GitHub](https://github.com/kajundrama/kajundrama.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+![CI](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg?branch=develop)
+![jsDelivr](https://data.jsdelivr.com/v1/package/gh/rundocs/jekyll-rtd-theme/badge)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Just another documentation theme compatible with GitHub Pages
 
-### Markdown
+## What it does?
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+This theme is inspired by [sphinx-rtd-theme](https://github.com/readthedocs/sphinx_rtd_theme) and refactored with:
 
-```markdown
-Syntax highlighted code block
+- [@primer/css](https://github.com/primer/css)
+- [github-pages](https://github.com/github/pages-gem) ([dependency versions](https://pages.github.com/versions/))
 
-# Header 1
-## Header 2
-### Header 3
+## Quick start
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```yml
+remote_theme: rundocs/jekyll-rtd-theme
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+You can [generate](https://github.com/rundocs/starter-slim/generate) with the same files and folders from [rundocs/starter-slim](https://github.com/rundocs/starter-slim/)
 
-### Jekyll Themes
+## Usage
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kajundrama/kajundrama.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Documentation that can guide how to create with Github pages, please refer to [rundocs.io](https://rundocs.io) for details
 
-### Support or Contact
+## Features
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+- Shortcodes (Toasts card, mermaid)
+- Pages Plugins (emoji, gist, avatar, mentions)
+- Auto generate sidebar
+- [Attribute List Definitions](https://kramdown.gettalong.org/syntax.html#attribute-list-definitions) (Primer/css utilities, Font Awesome 4)
+- Service worker (caches)
+- SEO (404, robots.txt, sitemap.xml)
+- Canonical Link (Open Graph, Twitter Card, Schema data)
+
+## Options
+
+| name          | default value        | description       |
+| ------------- | -------------------- | ----------------- |
+| `title`       | repo name            |                   |
+| `description` | repo description     |                   |
+| `url`         | user domain or cname |                   |
+| `baseurl`     | repo name            |                   |
+| `lang`        | `en`                 |                   |
+| `direction`   | `auto`               | `ltr` or `rtl`    |
+| `highlighter` | `rouge`              | Cannot be changed |
+
+```yml
+# folders sort
+readme_index:
+  with_frontmatter: true
+
+meta:
+  key1: value1
+  key2: value2
+  .
+  .
+  .
+
+google:
+  gtag:
+  adsense:
+
+mathjax: # this will prased to json, default: {}
+
+mermaid:
+  custom:     # mermaid link
+  initialize: # this will prased to json, default: {}
+
+scss:   # also _includes/extra/styles.scss
+script: # also _includes/extra/script.js
+
+translate:
+  # shortcodes
+  danger:
+  note:
+  tip:
+  warning:
+  # 404
+  not_found:
+  # copyright
+  revision:
+  # search
+  searching:
+  search:
+  search_docs:
+  search_results:
+  search_results_found: # the "#" in this translate will replaced with results size!
+  search_results_not_found:
+
+plugins:
+  - jemoji
+  - jekyll-avatar
+  - jekyll-mentions
+```
+
+## The license
+
+The theme is available as open source under the terms of the MIT License
