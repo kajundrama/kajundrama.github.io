@@ -16,6 +16,7 @@ Enterprise Github에서도 동일하게
 성성 후 Page에 접근하는 URl은 
 https://[orgname].pages/[username]
 
+
 ```text
 README.md 과 같은 파일을 반드시 올려야 합니다.
 ```
