@@ -12,12 +12,10 @@ Apache Kafka는 전통적인 엔터프라이즈 메시징 시스템의 대안입
 출처 : [https://www.redhat.com/ko/topics/integration/what-is-apache-kafka](https://www.redhat.com/ko/topics/integration/what-is-apache-kafka)
 
 # Kafka 설치하기
-[kafka 다운로드 사이트](https://kafka.apache.org/downloads)에서 다운로드 받아서 설치합니다.
-
-다운로드 받은 zip 파일 압축을 해제한다.   
-````shell script
+[kafka 다운로드 사이트](https://kafka.apache.org/downloads)에서 다운로드 받아서 설치합니다. 다운로드 받은 zip 파일 압축을 해제합니다.  
+```shell script
 $ tar -xzf kafka_2.13-2.6.0.tgz
-````   
+```   
 
 # Kafka 구동하기
 kafka는 [ZooKeeper](https://zookeeper.apache.org/) 기반으로 동작하기 때문에 zookeeper를 먼저 실행한다.
