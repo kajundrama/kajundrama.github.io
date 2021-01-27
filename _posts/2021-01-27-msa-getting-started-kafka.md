@@ -20,9 +20,9 @@ ZooKeeper에 대한 자세한 내용은 아래 링크를 참고하세요.
 [https://zookeeper.apache.org/doc/current/zookeeperOver.html#sc_designGoals](https://zookeeper.apache.org/doc/current/zookeeperOver.html#sc_designGoals)   
 
 ```shell script
-$ cd kafka_2.13-2.6.0
-$ bin/zookeeper-server-start.sh config/zookeeper.properties
-$ bin/kafka-server-start.sh config/server.properties
+cd kafka_2.13-2.6.0
+bin/zookeeper-server-start.sh config/zookeeper.properties
+bin/kafka-server-start.sh config/server.properties
 ```
 아래와 같이 기동로그가 뜨면 정상적으로 기동된 것 입니다.   
 
@@ -35,7 +35,7 @@ $ bin/kafka-server-start.sh config/server.properties
 아래와 같이 명령어를 수행ㅎ라여 Topic을 생성합니다.   
 
 ```shell script
-$ bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server localhost:9092
+bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server localhost:9092
 Created topic quickstart-events.
 ```
 생성된 Topic을 확인합니다.   
@@ -47,7 +47,7 @@ quickstart-events
 특정 토픽에 대한 설정 확인하기   
 
 ```shell script
-$ bin/kafka-topics.sh --describe --topic quickstart-events --bootstrap-server localhost:9092
+bin/kafka-topics.sh --describe --topic quickstart-events --bootstrap-server localhost:9092
 Topic: quickstart-events	PartitionCount: 1	ReplicationFactor: 1	Configs: segment.bytes=1073741824
 	Topic: quickstart-events	Partition: 0	Leader: 0	Replicas: 0	Isr: 0
 ```
@@ -72,7 +72,6 @@ bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --boots
 ```shell script
 bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092
 >hello kafka!!
-
 bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
 hello kafka!!
 ```
