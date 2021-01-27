@@ -13,7 +13,7 @@ Apache Kafka는 전통적인 엔터프라이즈 메시징 시스템의 대안입
 
 # Kafka 설치하기
 [kafka 다운로드 사이트](https://kafka.apache.org/downloads)에서 다운로드 받아서 설치합니다. 다운로드 받은 zip 파일 압축을 해제합니다.  
-  
+
 ```shell script
 $ tar -xzf kafka_2.13-2.6.0.tgz
 ```
