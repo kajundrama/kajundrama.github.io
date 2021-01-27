@@ -8,7 +8,7 @@
 
 	<name>kajundrama.github.io</name>
 	<description>Blog of Kajundrama</description>
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
 
 	<properties>
 		<java.version>1.8</java.version>
