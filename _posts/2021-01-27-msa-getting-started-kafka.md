@@ -17,7 +17,7 @@ Apache Kafka는 전통적인 엔터프라이즈 메시징 시스템의 대안입
 # Kafka 구동하기
 kafka는 [ZooKeeper](https://zookeeper.apache.org/) 기반으로 동작하기 때문에 zookeeper를 먼저 실행합니다.
 
-```shell script
+```shell script  
 cd kafka_2.13-2.6.0
 bin/zookeeper-server-start.sh config/zookeeper.properties
 bin/kafka-server-start.sh config/server.properties
@@ -25,7 +25,7 @@ bin/kafka-server-start.sh config/server.properties
 
 아래와 같이 기동로그가 뜨면 정상적으로 기동된 것 입니다.   
 
-```shell script
+```shell script  
 [2021-01-27 23:17:13,039] INFO [KafkaServer id=0] started (kafka.server.KafkaServer)
 [2021-01-27 23:17:13,146] INFO [broker-0-to-controller-send-thread]: Recorded new controller, from now on will use broker 0 (kafka.server.BrokerToControllerRequestThread)
 ```
@@ -33,19 +33,19 @@ bin/kafka-server-start.sh config/server.properties
 # Topic 생성하기
 아래와 같이 명령어를 수행ㅎ라여 Topic을 생성합니다.   
 
-```shell script
+```shell script  
 $ bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server localhost:9092
 Created topic quickstart-events.
 ```
 생성된 Topic을 확인합니다.   
 
-```shell script
+```shell script  
 $ bin/kafka-topics.sh --list --bootstrap-server localhost:9092
 quickstart-events
 ```
 특정 토픽에 대한 설정 확인하기   
 
-```shell script
+```shell script  
 $ bin/kafka-topics.sh --describe --topic quickstart-events --bootstrap-server localhost:9092
 Topic: quickstart-events	PartitionCount: 1	ReplicationFactor: 1	Configs: segment.bytes=1073741824
 	Topic: quickstart-events	Partition: 0	Leader: 0	Replicas: 0	Isr: 0
@@ -55,20 +55,20 @@ kafka에서 제공하는 shell을 통해 Producer와 Consumer를 실행하여 �
 
 Producer 생성하기   
 
-```shell script
+```shell script  
 $ bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092
 ```
 
 Consumer 생성하기   
 
-```shell script
+```shell script  
 $ bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
 ```
 
 메시지 전송하고 받기
 전송시점에 Consumer가 기동상태가 아니더라도 기동되면 그동안 보냈던 메시지가 한번에 수신한다.  
  
-```shell script
+```shell script  
 $ bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092
 >hello kafka!!
 $ bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
