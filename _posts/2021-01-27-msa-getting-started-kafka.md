@@ -18,6 +18,7 @@ Apache Kafka는 전통적인 엔터프라이즈 메시징 시스템의 대안입
 kafka는 [ZooKeeper](https://zookeeper.apache.org/) 기반으로 동작하기 때문에 zookeeper를 먼저 실행합니다.
 
 ```shell script  
+
 cd kafka_2.13-2.6.0
 bin/zookeeper-server-start.sh config/zookeeper.properties
 bin/kafka-server-start.sh config/server.properties
